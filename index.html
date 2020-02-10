@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="fr">
 <head>
   
@@ -6,57 +5,107 @@
   <title>TD1-Addresse IP</title>
 </head>
 <body>
+	<form id="myform">
 
-<div id="ip1">
-</div>
+		<p> <label for ="myIP">AdresseIP</label>
+			<input type="text" name="adresseIP" id="myIP">
+		</p>
+		<p> <label for ="mask">Masque</label>
+			<input type="text" name="mask" id="mask" >
+		</p>
+		<p><label for ="adrN">NouvelleIP</label>
+			<input type="text">
+		</p>
+		<button  type="button" onclick="calcIP()">ok</button>
 
-
-
-
- <div>
- <p> <label for ="adresseIP">AdresseIP</label>
-	<input type="text" name="adresseIP" id="adIP" required>
- </p>
- <p> <label for ="masque">Masque</label>
-	<input type="text" name="masque" id="mask" required>
- </p>
- <p><label for ="ip2">NouvelleIP</label>
-	<input type="text" value="ip2">
-	
- </p>
-	<div id="ip2">
-	
-	</div>
- <p>
-	<input type="Submit" value="Aléatoire">
-	<input type="reset" value="Annuler">
- </p>
- </div>
  
-</body>
-</html>
+		<!-- <input type="Submit" value="Aléatoire"> -->
+		<!-- <input type="reset" value="Annuler"> -->
+		
+	</form>
+	<div id="myIP"></div>
+	
+	<div id="mask"></div>
+	
+	<div id="adrN"></div>
+	
+	<div id="First"></div>
+	
+	<div id="Broadcast"></div>
+	
+	<div id="Last"></div>
+	<div id="Nb"></div>
+	
+	
+	
+<!-- --- -->
+
 <script>
-	var part1=192;
-	var part2=168;
-	var part3=100;
-	var part4=25;
-	var mask1=255;
-	var mask2=255;
-	var mask3=255;
-	var mask4=0;
 	
-	var Npart1=part1&mask1;
-	var Npart2=part2&mask2;
-	var Npart3=part3&mask3;
-	var Npart4=part4&mask4;
+function calcIP() {
+
+	console.log("calcIP");
+
+	var elem = document.getElementById("myIP").value;
+	//console.log(elem);
+	var ip = elem.split('.');
+
+	//console.log(ip);
+	var cidr = ip[3].split('/');
+
+	ip[3]= cidr[0];
+	var CIDR=cidr[1];
+	console.log(ip);
+
+	var IP = parseInt(ip[0]) << 24 |parseInt(ip[1]) << 16 |parseInt(ip[2]) << 8 |parseInt(ip[3]); 
+
+	var mask = 0xFFFFFFFF << (32-CIDR);
+	toString(mask);
+	document.getElementById("mask").innerHTML =toString(mask);
+	console.log(mask);
 	
-	var orginalIP = part1+"."+part2+"."+part3+"."+part4;
+	var adrN = IP & mask
+	toString(adrN);
+	document.getElementById("adrN").innerHTML =toString(adrN);
+	console.log(adrN);
+	
+	
+	var adrFirst = adrN +1;
+	toString(adrFirst);
+	document.getElementById("First").innerHTML =toString(adrFirst);
+	console.log(adrFirst);
+
+
+	var adrDiff = adrN | ~mask;
+	toString(adrDiff);
+	document.getElementById("Broadcast").innerHTML =toString(adrDiff);
+	console.log(adrDiff);
+
+	var adrLast = adrDiff -1;
+	toString(adrLast);
+	document.getElementById("Last").innerHTML =toString(adrLast);
+	console.log(adrLast);
+
+	var nb = Math.pow(2, (32-CIDR))-2;
+	document.getElementById("Nb").innerHTML =nb;
+	console.log(nb);
+}
 
 
 
-	var newIP = Npart1+"."+Npart2+"."+Npart3+"."+Npart4;
-    document.getElementById("ip1").innerHTML=orginalIP;
-    document.getElementById("ip2").innerHTML=newIP;
 	
-	
+	 <!-- myForm.addEventListener('reset', function(e){ -->
+	 <!-- }); -->
+	 
+function toString(data) {
+	var str = (data >> 24 &0xFF).toString()+"."+
+ (data >> 16 & 0xFF ).toString()+"." + (data >> 8 & 0xFF ).toString()+"." + (data & 0xFF).toString();
+ 
+	console.log(str);
+	return str;
+	}
 	</script>
+	
+</body>
+
+</html>
