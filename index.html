@@ -1,10 +1,36 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  
   <meta charset="UTF-8">
   <title>TD1-Addresse IP</title>
 </head>
 <body>
-  
+
+<div id="ip1">
+</div>
+<div id="ip2">
+</div>
+
+
+<script>
+var part1=192;
+	var part2=168;
+	var part3=100;
+	var part4=25;
+
+
+	var orginalIP = part1+"."+part2+"."+part3+"."+part4;
+
+	part4=99;
+
+	var newIP = part1+"."+part2+"."+part3+"."+part4;
+    document.getElementById("ip1").innerHTML=orginalIP;
+    document.getElementById("ip2").innerHTML=newIP;
+	
+	
+	</script>
+ 
+
 </body>
 </html>
