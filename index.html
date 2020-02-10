@@ -9,42 +9,54 @@
 
 <div id="ip1">
 </div>
-<div id="ip2">
-</div>
 
 
-<script>
-var part1=192;
-	var part2=168;
-	var part3=100;
-	var part4=25;
 
 
-	var orginalIP = part1+"."+part2+"."+part3+"."+part4;
-
-	part4=99;
-
-	var newIP = part1+"."+part2+"."+part3+"."+part4;
-    document.getElementById("ip1").innerHTML=orginalIP;
-    document.getElementById("ip2").innerHTML=newIP;
-	
-	
-	</script>
  <div>
  <p> <label for ="adresseIP">AdresseIP</label>
-	<input type="num" name="adresseIP" id="adIP" required>
+	<input type="text" name="adresseIP" id="adIP" required>
  </p>
  <p> <label for ="masque">Masque</label>
-	<input type="num" name="masque" id="mask" required>
+	<input type="text" name="masque" id="mask" required>
  </p>
- <p><label for ="newIP">NouvelleIP</label>
-	<input type="num" value="newIP">
+ <p><label for ="ip2">NouvelleIP</label>
+	<input type="text" value="ip2">
+	
  </p>
+	<div id="ip2">
+	
+	</div>
  <p>
-	<input type="random" value="Aléatoire">
-	<input type="clear" value="Annuler">
+	<input type="Submit" value="Aléatoire">
+	<input type="reset" value="Annuler">
  </p>
  </div>
  
 </body>
 </html>
+<script>
+	var part1=192;
+	var part2=168;
+	var part3=100;
+	var part4=25;
+	var mask1=255;
+	var mask2=255;
+	var mask3=255;
+	var mask4=0;
+	
+	var Npart1=part1&mask1;
+	var Npart2=part2&mask2;
+	var Npart3=part3&mask3;
+	var Npart4=part4&mask4;
+	
+	var orginalIP = part1+"."+part2+"."+part3+"."+part4;
+
+
+
+	var newIP = Npart1+"."+Npart2+"."+Npart3+"."+Npart4;
+    document.getElementById("ip1").innerHTML=orginalIP;
+    document.getElementById("ip2").innerHTML=newIP;
+	
+	
+	</script>
