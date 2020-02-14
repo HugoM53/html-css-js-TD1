@@ -1,0 +1,118 @@
+
+* { margin:0;   
+    padding:0; 
+	background-color: #F0F0F0;
+	font-family: arial, verdana, sans-serif;
+	font-size : 16px;
+}
+#titre{
+	background : #E0E0E0;
+	padding : 5px;
+}
+#imag{
+	background : #E0E0E0;
+	padding : 5px;
+}
+
+#img{
+	max-width: 100%;
+    height: auto;
+	margin-left: 25%;
+	
+	
+}
+#myform{
+	background-color: #F0F0F0;
+	position : relative ;
+	left:0px;
+	top: 0px ;
+	padding : 5px;
+	
+}
+
+#cont{
+	
+}
+#demRes {
+	margin-right: 90%;
+	position : relative ;
+	left:150px;
+	bottom: 0px ;
+	
+	padding : 5px;
+	
+}
+#mask{
+	font-family: arial, verdana, sans-serif;
+	font-size : 16px;
+	margin-right: 50%;
+	position : relative ;
+	left:230px;
+	bottom: 230px ;
+	
+	padding : 5px;
+	
+}
+
+#adrN{
+	font-family: arial, verdana, sans-serif;
+	font-size : 16px;
+	margin-right: 50%;
+	position : relative ;
+	left:285px;
+	bottom: 215px ;
+	
+	padding : 5px;
+}
+#First{
+	font-family: arial, verdana, sans-serif;
+	font-size : 16px;
+	margin-right: 50%;
+	position : relative ;
+	left:295px;
+	bottom: 210px ;
+	
+	padding : 5px;
+}
+
+#Broadcast{
+	font-family: arial, verdana, sans-serif;
+	font-size : 16px;
+	margin-right: 50%;
+	position : relative ;
+	left:245px;
+	bottom: 200px ;
+	
+	padding : 5px;
+}
+#Last{
+	font-family: arial, verdana, sans-serif;
+	font-size : 16px;
+	margin-right: 50%;
+	position : relative ;
+	left:290px;
+	bottom: 188px ;
+	
+	padding : 5px;
+}
+
+#nb{
+	font-family: arial, verdana, sans-serif;
+	font-size : 16px;
+	margin-right: 50%;
+	position : relative ;
+	left:295px;
+	bottom: 180px ;
+	
+	padding : 5px;
+}
+#pied{
+
+	background : #E0E0E0;
+	padding : 5px;
+	margin-top : 10px;
+	height : 100px;
+}
+
+
+
