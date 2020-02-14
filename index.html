@@ -1,49 +1,80 @@
 <html lang="fr">
 <head>
-  
+  <link rel="stylesheet" href="style3.css" class="rel">
   <meta charset="UTF-8">
   <title>TD1-Addresse IP</title>
+  
 </head>
 <body>
-<img src="subnet3.png" alt="subnet">
+	
+	<div id= imag>
+	  
+		<img src="subnet3.png" alt="subnet"id= "img">
+	</div>
+	<div id= titre> <h2>Décodage d'adresse </h2>
+	
 	<form id="myform">
 
 		<p> <label for ="myIP">AdresseIP</label>
-			<input type="text" name="adresseIP" id="myIP">
+			<input type="text" name="adresseIP" id="myIP" required minlength="9" maxlength="18">
 		</p>
-		<p> <label for ="mask">Masque</label>
-			<input type="text" name="mask" id="mask" >
-		</p>
-		<p><label for ="adrN">NouvelleIP</label>
-			<input type="text">
-		</p>
+		
+		
+			
+		
 		<button  type="button" onclick="calcIP()">Confirmer</button>
+		<!-- <button  type="button" onclick="getRandomInt()">Aléatoire</button> -->
 
  
 		<!-- <input type="Submit" value="Aléatoire"> -->
 		 <input type="reset" value="Annuler">
 		
 	</form>
-	<div id="myIP"></div>
 	
-	<div id="mask"></div>
+	<div id= cont>
+		<div id= demRes>
+			<p>Masque: </p>
+			<br>
+			<p>Adresse réseaux : </p>
+			<br>
+			
+			<p>Première adresse : </p>
+			<br>
+			<p>Broadcast : </p>
+			<br>
+			<p>Dernière adresse : </p>
+			<br>
+			<p>Nombre d'adresse : </p>
+		
+		</div>
+		
+		
+			<div id="mask"><p><br></p></div>
+			
+			<div id="adrN"><p><br></p></div>
+			
+			<div id="First"><p><br></p></div>
+			
+			<div id="Broadcast"><p><br></p></div>
+		
+			<div id="Last"><p><br></p></div>
+			
+			<div id="Nb"><p><br></p></div>
+		</div>
 	
-	<div id="adrN"></div>
-	
-	<div id="First"></div>
-	
-	<div id="Broadcast"></div>
-	
-	<div id="Last"></div>
-	<div id="Nb"></div>
-	
-	
-	
+	</div>
+	<div id= pied></div>
 <!-- --- -->
 
 <script>
-	
+	<!-- var nbr1= entieraleatoire(0,255); -->
+	<!-- var nbr2= entieraleatoire(0,255); -->
+	<!-- var nbr3= entieraleatoire(0,255); -->
+	<!-- var nbr4= entieraleatoire(0,255); -->
+	<!-- var CIDRal= entieraleatoire(0,32); -->
 function calcIP() {
+	
+	
 
 	console.log("calcIP");
 
@@ -91,11 +122,7 @@ function calcIP() {
 	document.getElementById("Nb").innerHTML =nb;
 	console.log(nb);
 }
-
-
-
-	
-	  myForm.addEventListener('reset', function(e){ 
+		myForm.addEventListener('reset', function(e){ 
 	  });
 	 
 function toString(data) {
@@ -105,8 +132,28 @@ function toString(data) {
 	console.log(str);
 	return str;
 	}
-	</script>
+	<!-- function random(MIN,MAX) -->
+	<!-- { -->
+	<!-- console.log("aléatoire"); -->
+	<!-- toString(nbr1); -->
+	<!-- toString(nbr2); -->
+	<!-- toString(nbr3); -->
+	<!-- toString(nbr4); -->
 	
+	<!-- var IPal = nbr1+"."+nbr2+"." + nbr3+"."+nbr4; -->
+	<!-- var ipal = elem.split('.'); -->
+	<!-- elem=document.getElementById("IPal").value; -->
+	<!-- var CIDRal = ipal[3].split('/'); -->
+	<!-- console.log(IPal); -->
+	<!-- console.log(CIDRal); -->
+	
+	
+	<!-- return Math.floor(Math.random()*(MAX-MIN+1))+ MIN; -->
+
+
+	
+	
+	</script>
 </body>
 
 </html>
